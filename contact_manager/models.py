@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Contact(models.Model):
@@ -8,3 +9,8 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.fullname
+
+
+    def get_absolute_url(self):
+        return reverse('contact_manager:contact_lists')
+     

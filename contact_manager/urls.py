@@ -1,17 +1,12 @@
-from django.contrib.auth import views
 from django.urls import path
 
-app_name = 'contact_manger'
+from contact_manager.views import CreateContact, ContactLists, ContactDelete, ContactUpdate
+
+app_name = 'contact_manager'
 urlpatterns = [
-    path('login/', views.LoginView.as_view(), name='login'),
-    path('logout/', views.LogoutView.as_view(), name='logout'),
-
-    # path('password_change/', views.PasswordChangeView.as_view(), name='password_change'),
-    # path('password_change/done/', views.PasswordChangeDoneView.as_view(), name='password_change_done'),
-
-    # path('password_reset/', views.PasswordResetView.as_view(), name='password_reset'),
-    # path('password_reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
-    # path('reset/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    # path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path('create/', CreateContact.as_view(), name='create_contact'),
+    path('contacts_list/', ContactLists.as_view(), name='contact_lists'),
+    path('delete/<int:pk>', ContactDelete.as_view(), name='contact_delete'),
+    path('update/<int:pk>', ContactUpdate.as_view(), name='contact_update'),
 ]
 
