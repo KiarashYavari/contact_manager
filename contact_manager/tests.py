@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AnonymousUser
 from django.test import TestCase, RequestFactory
 from django.urls import reverse
-from.views import CreateContact, ContactUpdate, ContactLists, ContactDelete
+from.views import CreateContact, ContactLists
 from .models import Contact
 
 # Create your tests here.
