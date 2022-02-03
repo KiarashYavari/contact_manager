@@ -17,7 +17,7 @@ class ContactLists(ListView):
 
 class ContactDelete(DeleteView):
     model= Contact
-    success_url = reverse_lazy('contact_lists')
+    success_url = reverse_lazy('contact_manager:contact_lists')
 
 
 class ContactUpdate(UpdateView):
