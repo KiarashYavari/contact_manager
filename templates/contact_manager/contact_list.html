@@ -1,0 +1,10 @@
+<table>
+{%for contact in object_list%}
+    <tr>
+    <td><a href="{% url 'contact_manager:contact_update' contact.pk %}">{{contact.fullname}}</a></td>
+    <td>{{contact.email_address}}</td>
+    <td>{{contact.phone_number}}</td>
+    <td><a href="{% url 'contact_manager:contact_delete' contact.pk %}">delete</a></td>
+    </tr>
+{%endfor%}
+</table>
